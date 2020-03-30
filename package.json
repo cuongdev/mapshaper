@@ -23,7 +23,7 @@
 	},
 	"scripts": {
 		"test": "node node_modules/mocha/bin/mocha --check-leaks -R dot",
-		"build": "node build.js; rollup --config; cp mapshaper.js www",
+		"build": "node build.js; node_modules/rollup/dist/bin/rollup --config; cp mapshaper.js www",
 		"pretest": "npm run build",
 		"prepublishOnly": "npm test",
 		"postpublish": "./release"
