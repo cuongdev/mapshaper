@@ -141,6 +141,8 @@ var utils = {
 
 };
 
+export default utils;
+
 
 // Append elements of @src array to @dest array
 utils.merge = function(dest, src) {
@@ -420,7 +422,7 @@ utils.formatNumber = function(num, decimals, nullStr, showPos) {
 
 
 
-function Transform() {
+export function Transform() {
   this.mx = this.my = 1;
   this.bx = this.by = 0;
 }
@@ -453,7 +455,7 @@ Transform.prototype.toString = function() {
 };
 
 
-function Bounds() {
+export function Bounds() {
   if (arguments.length > 0) {
     this.setBounds.apply(this, arguments);
   }
@@ -938,7 +940,7 @@ utils.mean = function(arr) {
 //   binary data; Remembers endianness and read/write position.
 // Has convenience methods for copying from buffers, etc.
 //
-function BinArray(buf, le) {
+export function BinArray(buf, le) {
   if (utils.isNumber(buf)) {
     buf = new ArrayBuffer(buf);
   } else if (typeof Buffer == 'function' && buf instanceof Buffer) {

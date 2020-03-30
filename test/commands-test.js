@@ -1,7 +1,8 @@
 var api = require('../'),
   assert = require('assert'),
   fs = require('fs'),
-  format = api.utils.format;
+  format = api.utils.format,
+  mapshaper = api;
 
 var states_shp = "test/data/two_states.shp";
 

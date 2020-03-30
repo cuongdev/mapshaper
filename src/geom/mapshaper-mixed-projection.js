@@ -1,4 +1,5 @@
-/* @requires mapshaper-matrix2d */
+/* requires mapshaper-matrix2d */
+import {Matrix2D} from 'geom/mapshaper-matrix2d';
 
 // A compound projection, consisting of a default projection and one or more rectangular frames
 // that are projected separately and affine transformed.

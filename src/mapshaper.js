@@ -8,7 +8,6 @@ api.cli = cli;
 api.internal = internal;
 api.utils = utils;
 api.geom = geom;
-mapshaper = api;
 
 // Expose internal objects for testing
 utils.extend(api.internal, {
@@ -42,4 +41,6 @@ if (typeof define === "function" && define.amd) {
   define("mapshaper", api);
 } else if (typeof module === "object" && module.exports) {
   module.exports = api;
+} else if (typeof window === "object" && window) {
+  window.mapshaper = api;
 }

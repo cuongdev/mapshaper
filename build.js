@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var version = require('./package.json').version;
 var follow = process.argv.indexOf('-f') > -1;
 var requiredModules = [
@@ -12,13 +10,11 @@ var requiredModules = [
     'path'
   ];
 
-
-require("catty")({follow: follow})
+require("catty")({follow: follow, global: true})
   .addLibrary("src")
   .cat("src/gui/gui.js", './www/mapshaper-gui.js')
   .prepend("VERSION = '" + version + "';")
   .cat("src/mapshaper.js", onCat);
-
 
 require('browserify')()
   .require(requiredModules)
@@ -30,8 +26,7 @@ require('browserify')()
 
 function onCat(err, js) {
   if (!err) {
-    write('./mapshaper.js', js);
-    write('./www/mapshaper.js', js);
+    write('./build/mapshaper_partial.js', js);
 
     /*
     // switch to this if any modules are bundled w/ mapshaper.js
