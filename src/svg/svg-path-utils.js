@@ -1,4 +1,3 @@
-/* @require mapshaper-geom */
 
 SVG.stringifyVertex = function(p) {
   return p[0] + ' ' + p[1]; // TODO: round coords by default?

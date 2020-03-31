@@ -1,5 +1,3 @@
-/* @requires mapshaper-common */
-
 var R = 6378137;
 var D2R = Math.PI / 180;
 
@@ -312,37 +310,19 @@ function pointSegDistSq2(px, py, ax, ay, bx, by) {
   return distanceSq(px, py, ax + t * (bx - ax), ay + t * (by - ay));
 }
 
-internal.calcArcBounds = function(xx, yy, start, len) {
-  var i = start | 0,
-      n = isNaN(len) ? xx.length - i : len + i,
-      x, y, xmin, ymin, xmax, ymax;
-  if (n > 0) {
-    xmin = xmax = xx[i];
-    ymin = ymax = yy[i];
-  }
-  for (i++; i<n; i++) {
-    x = xx[i];
-    y = yy[i];
-    if (x < xmin) xmin = x;
-    if (x > xmax) xmax = x;
-    if (y < ymin) ymin = y;
-    if (y > ymax) ymax = y;
-  }
-  return [xmin, ymin, xmax, ymax];
-};
 
-internal.reversePathCoords = function(arr, start, len) {
-  var i = start,
-      j = start + len - 1,
-      tmp;
-  while (i < j) {
-    tmp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = tmp;
-    i++;
-    j--;
-  }
-};
+// internal.reversePathCoords = function(arr, start, len) {
+//   var i = start,
+//       j = start + len - 1,
+//       tmp;
+//   while (i < j) {
+//     tmp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = tmp;
+//     i++;
+//     j--;
+//   }
+// };
 
 // merge B into A
 function mergeBounds(a, b) {
@@ -361,13 +341,14 @@ function boundsArea(b) {
 }
 
 // export functions so they can be tested
-var geom = {
+export default {
   R: R,
   D2R: D2R,
   degreesToMeters: degreesToMeters,
   distanceSq: distanceSq,
   distance2D: distance2D,
   distance3D: distance3D,
+  containsBounds: containsBounds,
   innerAngle: innerAngle,
   innerAngle2: innerAngle2,
   signedAngle: signedAngle,

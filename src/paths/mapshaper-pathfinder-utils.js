@@ -1,4 +1,4 @@
-/* @requires mapshaper-nodes mapshaper-geom */
+/* @requires mapshaper-nodes */
 
 
 // Return id of rightmost connected arc in relation to @arcId

@@ -319,7 +319,7 @@ internal.getCutPoint = function(x, y, i, j, xx, yy) {
 internal.sortCutPoints = function(points, xx, yy) {
   points.sort(function(a, b) {
     if (a.i != b.i) return a.i - b.i;
-    return distanceSq(xx[a.i], yy[a.i], a.x, a.y) - distanceSq(xx[b.i], yy[b.i], b.x, b.y);
+    return geom.distanceSq(xx[a.i], yy[a.i], a.x, a.y) - geom.distanceSq(xx[b.i], yy[b.i], b.x, b.y);
     // The old code below is no longer reliable, now that out-of-range intersection
     // points are allowed.
     // return Math.abs(a.x - xx[a.i]) - Math.abs(b.x - xx[b.i]) ||

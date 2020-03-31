@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-geom
 mapshaper-path-geom
 mapshaper-polygon-neighbors
 */

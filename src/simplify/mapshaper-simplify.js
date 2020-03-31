@@ -3,7 +3,6 @@ mapshaper-visvalingam
 mapshaper-dp
 mapshaper-dataset-utils
 mapshaper-post-simplify-repair
-mapshaper-geom
 mapshaper-simplify-info
 */
 
@@ -130,7 +129,7 @@ internal.protectContentEdges = function(arcs) {
 internal.limitSimplificationExtent = function(arcs, bb, hardLimit) {
   var arcBounds = arcs.getBounds().toArray();
   // return if content doesn't reach edges
-  if (containsBounds(bb, arcBounds) === true) return;
+  if (geom.containsBounds(bb, arcBounds) === true) return;
   arcs.forEach3(function(xx, yy, zz) {
     var lockZ = hardLimit ? Infinity : 0,
     x, y;

@@ -16,7 +16,7 @@ internal.findNearestPolylineVertex = function(x, y, path, arcs, spherical) {
   var minLen = Infinity,
       minX, minY,
       iter = arcs.getShapeIter(path),
-      calcLen = spherical ? greatCircleDistance : distance2D,
+      calcLen = spherical ? geom.greatCircleDistance : geom.distance2D,
       dist;
   while (iter.hasNext()) {
     dist = calcLen(x, y, iter.x, iter.y);

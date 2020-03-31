@@ -1,4 +1,4 @@
-/* @require mapshaper-common, mapshaper-geom */
+/* @require mapshaper-common */
 
 // @arcs ArcCollection
 // @filter Optional filter function, arcIds that return false are excluded

@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-projections
-mapshaper-geom
 mapshaper-arc-editor
 mapshaper-shape-utils
 */
@@ -178,7 +177,7 @@ internal.getDefaultDensifyInterval = function(arcs, proj) {
       bb = arcs.getBounds(),
       a = proj(bb.centerX(), bb.centerY()),
       b = proj(bb.centerX() + xy[0], bb.centerY() + xy[1]);
-  return distance2D(a[0], a[1], b[0], b[1]);
+  return geom.distance2D(a[0], a[1], b[0], b[1]);
 };
 
 // Interpolate points into a projected line segment if needed to prevent large
@@ -199,7 +198,7 @@ internal.densifySegment = function(lng0, lat0, x0, y0, lng2, lat2, x2, y2, proj,
   //   segment by more than the @interval parameter.
   //   ... but don't bisect very small segments to prevent infinite recursion
   //   (e.g. if projection function is discontinuous)
-  if (distSq > interval * interval * 0.25 && distance2D(lng0, lat0, lng2, lat2) > 0.01) {
+  if (distSq > interval * interval * 0.25 && geom.distance2D(lng0, lat0, lng2, lat2) > 0.01) {
     internal.densifySegment(lng0, lat0, x0, y0, lng1, lat1, p[0], p[1], proj, interval, points);
     points.push(p);
     internal.densifySegment(lng1, lat1, p[0], p[1], lng2, lat2, x2, y2, proj, interval, points);

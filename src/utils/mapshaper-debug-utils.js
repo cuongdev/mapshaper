@@ -23,7 +23,7 @@ internal.debugNode = function(arcId, nodes) {
           var p3 = arcs.getVertex(id, 0);
           str += utils.format(", [%f, %f]", p3.x, p3.y);
         }
-        str += " len: " + distance2D(p1.x, p1.y, p2.x, p2.y);
+        str += " len: " + geom.distance2D(p1.x, p1.y, p2.x, p2.y);
       }
     } else {
       str = "[]";

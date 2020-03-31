@@ -1,168 +1,18 @@
 /* @requires mapshaper-utils */
 
-var api = {};
-var VERSION; // set by build script
-var internal = {
-  VERSION: VERSION, // export version
-  LOGGING: false,
-  STDOUT: false,
-  context: createContext()
-};
+// define some global objects
+// (these will go away when esm transition is done)
+import api from 'mapshaper-api';
+import internal from 'mapshaper-internal';
+import T from 'utils/mapshaper-timing';
+import { error, stop, message, print, verbose, debug, UserError } from 'utils/mapshaper-logging';
+import { absArcId } from 'paths/mapshaper-arc-utils';
+import geom from 'geom/mapshaper-geom';
 
-// Support for timing using T.start() and T.stop("message")
-var T = {
-  stack: [],
-  start: function() {
-    T.stack.push(+new Date());
-  },
-  stop: function(note) {
-    var elapsed = (+new Date() - T.stack.pop());
-    var msg = elapsed + 'ms';
-    if (note) {
-      msg = note + " " + msg;
-    }
-    verbose(msg);
-    return elapsed;
-  }
-};
-
-new Float64Array(1); // workaround for https://github.com/nodejs/node/issues/6006
+var VERSION; // assignment is inserted by build script at the beginning of the bundle
+internal.VERSION = VERSION;
 
 internal.runningInBrowser = function() {return !!api.gui;};
-
-internal.getStateVar = function(key) {
-  return internal.context[key];
-};
-
-internal.setStateVar = function(key, val) {
-  internal.context[key] = val;
-};
-
-function createContext() {
-  return {
-    DEBUG: false,
-    QUIET: false,
-    VERBOSE: false,
-    defs: {},
-    input_files: []
-  };
-}
-
-// Install a new set of context variables, clear them when an async callback is called.
-// @cb callback function to wrap
-// returns wrapped callback function
-function createAsyncContext(cb) {
-  internal.context = createContext();
-  return function() {
-    cb.apply(null, utils.toArray(arguments));
-    // clear context after cb(), so output/errors can be handled in current context
-    internal.context = createContext();
-  };
-}
-
-// Save the current context, restore it when an async callback is called
-// @cb callback function to wrap
-// returns wrapped callback function
-function preserveContext(cb) {
-  var ctx = internal.context;
-  return function() {
-    internal.context = ctx;
-    cb.apply(null, utils.toArray(arguments));
-  };
-}
-
-function error() {
-  internal.error.apply(null, utils.toArray(arguments));
-}
-
-// Handle an error caused by invalid input or misuse of API
-function stop() {
-  internal.stop.apply(null, utils.toArray(arguments));
-}
-
-function UserError(msg) {
-  var err = new Error(msg);
-  err.name = 'UserError';
-  return err;
-}
-
-function messageArgs(args) {
-  var arr = utils.toArray(args);
-  var cmd = internal.getStateVar('current_command');
-  if (cmd && cmd != 'help') {
-    arr.unshift('[' + cmd + ']');
-  }
-  return arr;
-}
-
-// print a status message to stderr
-function message() {
-  internal.message.apply(null, messageArgs(arguments));
-}
-
-// print a message to stdout
-function print() {
-  internal.STDOUT = true; // tell logArgs() to print to stdout, not stderr
-  message.apply(null, arguments);
-  internal.STDOUT = false;
-}
-
-function verbose() {
-  if (internal.getStateVar('VERBOSE')) {
-    // internal.logArgs(arguments);
-    internal.message.apply(null, messageArgs(arguments));
-  }
-}
-
-function debug() {
-  if (internal.getStateVar('DEBUG')) {
-    internal.logArgs(arguments);
-  }
-}
-
-function absArcId(arcId) {
-  return arcId >= 0 ? arcId : ~arcId;
-}
-
-api.enableLogging = function() {
-  internal.LOGGING = true;
-  return api;
-};
-
-api.printError = function(err) {
-  var msg;
-  if (utils.isString(err)) {
-    err = new UserError(err);
-  }
-  if (internal.LOGGING && err.name == 'UserError') {
-    msg = err.message;
-    if (!/Error/.test(msg)) {
-      msg = "Error: " + msg;
-    }
-    console.error(messageArgs([msg]).join(' '));
-    internal.message("Run mapshaper -h to view help");
-  } else {
-    // not a user error or logging is disabled -- throw it
-    throw err;
-  }
-};
-
-internal.error = function() {
-  var msg = utils.toArray(arguments).join(' ');
-  throw new Error(msg);
-};
-
-internal.stop = function() {
-  throw new UserError(internal.formatLogArgs(arguments));
-};
-
-internal.message = function() {
-  internal.logArgs(arguments);
-};
-
-internal.formatLogArgs = function(args) {
-  return utils.toArray(args).join(' ');
-};
 
 // Format an array of (preferably short) strings in columns for console logging.
 internal.formatStringsAsGrid = function(arr) {
@@ -182,12 +32,6 @@ internal.formatStringsAsGrid = function(arr) {
   }, '');
 };
 
-internal.logArgs = function(args) {
-  if (internal.LOGGING && !internal.getStateVar('QUIET') && utils.isArrayLike(args)) {
-    (!internal.STDOUT && console.error || console.log).call(console, internal.formatLogArgs(args));
-  }
-};
-
 internal.getWorldBounds = function(e) {
   e = utils.isFiniteNumber(e) ? e : 1e-10;
   return [-180 + e, -90 + e, 180 - e, 90 - e];
@@ -196,7 +40,7 @@ internal.getWorldBounds = function(e) {
 internal.probablyDecimalDegreeBounds = function(b) {
   var world = internal.getWorldBounds(-1), // add a bit of excess
       bbox = (b instanceof Bounds) ? b.toArray() : b;
-  return containsBounds(world, bbox);
+  return geom.containsBounds(world, bbox);
 };
 
 internal.clampToWorldBounds = function(b) {
@@ -210,4 +54,3 @@ internal.requireProjectedDataset = function(dataset) {
     stop("Command requires a target with projected coordinates (not lat-long)");
   }
 };
-

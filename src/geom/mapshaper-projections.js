@@ -183,7 +183,7 @@ internal.getScaleFactorAtXY = function(x, y, crs) {
   var dist = 1;
   var lp = proj.pj_inv_deg({x: x, y: y}, crs);
   var lp2 = proj.pj_inv_deg({x: x + dist, y: y}, crs);
-  var k = dist / greatCircleDistance(lp.lam, lp.phi, lp2.lam, lp2.phi);
+  var k = dist / geom.greatCircleDistance(lp.lam, lp.phi, lp2.lam, lp2.phi);
   return k;
 };
 

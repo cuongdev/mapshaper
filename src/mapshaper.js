@@ -9,6 +9,11 @@ api.internal = internal;
 api.utils = utils;
 api.geom = geom;
 
+// Maintain compatibility between ESM modules and current tests
+import exports from 'esm-exports';
+Object.assign(api.internal, exports.internal);
+
+
 // Expose internal objects for testing
 utils.extend(api.internal, {
   Catalog: Catalog,

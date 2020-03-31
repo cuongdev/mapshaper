@@ -1,4 +1,4 @@
-/* @requires mapshaper-arcs, mapshaper-geom */
+/* @requires mapshaper-arcs */
 
 internal.simplifyArcsFast = function(arcs, dist) {
   var xx = [],
@@ -49,7 +49,7 @@ internal.simplifyPathFast = function(path, arcs, dist, xx, yy) {
   while (iter.hasNext()) {
     x = iter.x;
     y = iter.y;
-    if (count === 0 || distance2D(x, y, prevX, prevY) > dist) {
+    if (count === 0 || geom.distance2D(x, y, prevX, prevY) > dist) {
       xx.push(x);
       yy.push(y);
       prevX = x;

@@ -1,4 +1,6 @@
-/* @requires mapshaper-common, mapshaper-geom, mapshaper-shape-iter */
+/* @requires mapshaper-common, mapshaper-shape-iter */
+
+import { calcArcBounds } from 'paths/mapshaper-arc-utils';
 
 // An interface for managing a collection of paths.
 // Constructor signatures:
@@ -79,12 +81,12 @@ function ArcCollection() {
   }
 
   function initBounds() {
-    var data = calcArcBounds(_xx, _yy, _nn);
+    var data = calcArcBounds2(_xx, _yy, _nn);
     _bb = data.bb;
     _allBounds = data.bounds;
   }
 
-  function calcArcBounds(xx, yy, nn) {
+  function calcArcBounds2(xx, yy, nn) {
     var numArcs = nn.length,
         bb = new Float64Array(numArcs * 4),
         bounds = new Bounds(),
@@ -95,7 +97,7 @@ function ArcCollection() {
       arcLen = nn[i];
       if (arcLen > 0) {
         j = i * 4;
-        b = internal.calcArcBounds(xx, yy, arcOffs, arcLen);
+        b = calcArcBounds(xx, yy, arcOffs, arcLen);
         bb[j++] = b[0];
         bb[j++] = b[1];
         bb[j++] = b[2];

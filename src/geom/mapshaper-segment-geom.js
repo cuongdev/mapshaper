@@ -1,4 +1,4 @@
-/* @requires mapshaper-arcs, mapshaper-geom */
+/* @requires mapshaper-arcs */
 
 geom.segmentIntersection = segmentIntersection;
 geom.segmentHit = segmentHit;
@@ -143,7 +143,7 @@ function findClosestPointOnSeg(px, py, ax, ay, bx, by) {
 }
 
 function snapIfCloser(p, minDist, x, y, x2, y2) {
-  var dist = distance2D(x, y, x2, y2);
+  var dist = geom.distance2D(x, y, x2, y2);
   if (dist < minDist) {
     minDist = dist;
     p[0] = x2;

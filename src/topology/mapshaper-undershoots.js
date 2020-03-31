@@ -76,7 +76,7 @@ internal.insertArcExtensions = function(arcs, extensions) {
 };
 
 internal.chooseCloserPoint = function(p, a, b) {
-  return distance2D(p[0], p[1], a[0], a[1]) < distance2D(p[0], p[1], b[0], b[1]) ? a : b;
+  return geom.distance2D(p[0], p[1], a[0], a[1]) < geom.distance2D(p[0], p[1], b[0], b[1]) ? a : b;
 };
 
 internal.pointIsEndpoint = function(p, a, b) {
@@ -85,7 +85,7 @@ internal.pointIsEndpoint = function(p, a, b) {
 
 // move point <b> a bit farther away from <a>
 internal.addTinyOvershoot = function(a, b) {
-  var dist = distance2D(a[0], a[1], b[0], b[1]);
+  var dist = geom.distance2D(a[0], a[1], b[0], b[1]);
   var k = (dist + 1e-6) / dist;
   return [a[0] + k * (b[0] - a[0]), a[1] + k * (b[1] - a[1])];
 };

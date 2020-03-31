@@ -18,7 +18,7 @@ internal.dissolvePointGeometry = function(lyr, getGroupId, opts) {
     if (!p) return;
     if (useSph) {
       tmp = [];
-      lngLatToXYZ(p[0], p[1], tmp);
+      geom.lngLatToXYZ(p[0], p[1], tmp);
       p = tmp;
     }
     groups[groupId] = reducePointCentroid(groups[groupId], p, weight);
@@ -30,7 +30,7 @@ internal.dissolvePointGeometry = function(lyr, getGroupId, opts) {
     if (useSph) {
       p1 = memo.centroid;
       p2 = [];
-      xyzToLngLat(p1[0], p1[1], p1[2], p2);
+      geom.xyzToLngLat(p1[0], p1[1], p1[2], p2);
     } else {
       p2 = memo.centroid;
     }

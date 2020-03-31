@@ -80,7 +80,7 @@ internal.getPointWeightingFunction = function(centroid, pathBounds) {
   // Points closer to the centroid are slightly preferred
   var referenceDist = Math.max(pathBounds.width(), pathBounds.height()) / 2;
   return function(x, y) {
-    var offset = distance2D(centroid.x, centroid.y, x, y);
+    var offset = geom.distance2D(centroid.x, centroid.y, x, y);
     return 1 - Math.min(0.6 * offset / referenceDist, 0.25);
   };
 };

@@ -3,6 +3,8 @@ mapshaper-common
 mapshaper-file-types
 */
 
+import { preserveContext } from 'mapshaper-internal';
+
 var cli = {};
 
 cli.isFile = function(path, cache) {

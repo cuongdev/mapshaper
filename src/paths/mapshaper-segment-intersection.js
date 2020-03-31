@@ -33,7 +33,7 @@ internal.findSegmentIntersections = (function() {
         bounds = arcs.getBounds(),
         // TODO: handle spherical bounds
         spherical = !arcs.isPlanar() &&
-            containsBounds(internal.getWorldBounds(), bounds.toArray()),
+            geom.containsBounds(internal.getWorldBounds(), bounds.toArray()),
         ymin = bounds.ymin,
         yrange = bounds.ymax - ymin,
         stripeCount = opts.stripes || internal.calcSegmentIntersectionStripeCount(arcs),

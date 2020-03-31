@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-topology,
-mapshaper-geom,
 mapshaper-arcs
 */
 

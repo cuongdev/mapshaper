@@ -1,4 +1,4 @@
-/* @require mapshaper-arcs, mapshaper-geom */
+/* @require mapshaper-arcs */
 
 internal.calcSimplifyStats = function(arcs, use3D) {
   var distSq = use3D ? pointSegGeoDistSq : geom.pointSegDistSq,

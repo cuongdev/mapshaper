@@ -1,5 +1,7 @@
 /* @requires mapshaper-run-command, mapshaper-parse-commands, mapshaper-catalog */
 
+import { createAsyncContext } from 'mapshaper-internal';
+
 // Parse command line args into commands and run them
 // Function takes an optional Node-style callback. A Promise is returned if no callback is given.
 //   function(argv[, input], callback)

@@ -1,4 +1,4 @@
-/* @requires mapshaper-point-utils, mapshaper-geom */
+/* @requires mapshaper-point-utils */
 
 // TODO: use an actual index instead of linear search
 function PointIndex(shapes, opts) {
@@ -15,7 +15,7 @@ function PointIndex(shapes, opts) {
   function testPoint(p, id) {
     var distSq;
     for (var i=0; i<target.length; i++) {
-      distSq = distanceSq(target[i][0], target[i][1], p[0], p[1]);
+      distSq = geom.distanceSq(target[i][0], target[i][1], p[0], p[1]);
       if (distSq < minDistSq && distSq <= buf * buf) {
         minDistSq = distSq;
         minId = id;

@@ -1,4 +1,5 @@
-/* @requires mapshaper-mixed-projection, mapshaper-delim-import */
+/* @requires mapshaper-delim-import */
+import {MixedProjection} from 'geom/mapshaper-mixed-projection';
 
 // str: a custom projection string, e.g.: "albersusa +PR"
 internal.parseCustomProjection = function(str) {

@@ -1,4 +1,3 @@
-
 /* @requires
 mapshaper-pathfinder-utils
 mapshaper-pathfinder

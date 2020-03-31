@@ -1,4 +1,5 @@
-/* @require svg-common mapshaper-sha1 */
+/* @require svg-common */
+import {sha1} from 'utils/mapshaper-sha1';
 
 SVG.embedImages = function(obj, symbols) {
   // Same-origin policy is an obstacle to embedding images in web UI

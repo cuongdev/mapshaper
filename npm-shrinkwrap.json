@@ -660,6 +660,7 @@
 			"integrity": "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=",
 			"dev": true
 		},
+		"esm": {},
 		"events": {
 			"version": "2.1.0",
 			"resolved": "https://registry.npmjs.org/events/-/events-2.1.0.tgz",

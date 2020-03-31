@@ -1,4 +1,3 @@
-/* @requires mapshaper-geom */
 
 geom.pathIsClosed = function(ids, arcs) {
   var firstArc = ids[0];
@@ -24,7 +23,7 @@ geom.getPointToPathInfo = function(px, py, ids, arcs) {
   while (iter.hasNext()) {
     bx = iter.x;
     by = iter.y;
-    pabSq = pointSegDistSq2(px, py, ax, ay, bx, by);
+    pabSq = geom.pointSegDistSq2(px, py, ax, ay, bx, by);
     if (pabSq < pPathSq) {
       pPathSq = pabSq;
       axmin = ax;
@@ -119,7 +118,7 @@ geom.calcPathLen = (function() {
     if (spherical && arcs.isPlanar()) {
       error("Expected lat-long coordinates");
     }
-    calcLen = spherical ? greatCircleDistance : distance2D;
+    calcLen = spherical ? geom.greatCircleDistance : geom.distance2D;
     len = 0;
     for (var i=0, n=path.length; i<n; i++) {
       arcs.forEachArcSegment(path[i], addSegLen);

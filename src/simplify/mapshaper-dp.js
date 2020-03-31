@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-geom */
+/* @requires mapshaper-common */
 
 var DouglasPeucker = {};
 

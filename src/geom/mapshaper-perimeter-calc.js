@@ -3,7 +3,7 @@
 // Returns a function for calculating the percentage of a shape's perimeter by length that
 // is composed of inner (shared) boundaries
 internal.getInnerPctCalcFunction = function(arcs, shapes) {
-  var calcSegLen = arcs.isPlanar() ? distance2D : greatCircleDistance;
+  var calcSegLen = arcs.isPlanar() ? geom.distance2D : geom.greatCircleDistance;
   var arcIndex = new ArcTopologyIndex(arcs, shapes);
   var outerLen, innerLen, arcLen; // temp variables
 

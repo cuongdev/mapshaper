@@ -5,7 +5,6 @@ mapshaper-polygon-centroid
 mapshaper-anchor-points
 mapshaper-inner-points
 mapshaper-polyline-to-point
-mapshaper-geom
 mapshaper-dms
 */
 
@@ -76,7 +75,7 @@ internal.interpolatePoint2D = function(ax, ay, bx, by, k) {
 
 internal.interpolatePointsAlongArc = function(ids, arcs, interval) {
   var iter = arcs.getShapeIter(ids);
-  var distance = arcs.isPlanar() ? distance2D : greatCircleDistance;
+  var distance = arcs.isPlanar() ? geom.distance2D : geom.greatCircleDistance;
   var coords = [];
   var elapsedDist = 0;
   var prevX, prevY;
