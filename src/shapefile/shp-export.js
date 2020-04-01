@@ -5,12 +5,14 @@ mapshaper-projections
 mapshaper-shape-utils
 */
 
+import { exportDbfFile } from 'shapefile/dbf-export';
+
 // Convert a dataset to Shapefile files
 internal.exportShapefile = function(dataset, opts) {
   return dataset.layers.reduce(function(files, lyr) {
     var prj = internal.exportPrjFile(lyr, dataset);
     files = files.concat(internal.exportShpAndShxFiles(lyr, dataset, opts));
-    files = files.concat(internal.exportDbfFile(lyr, dataset, opts));
+    files = files.concat(exportDbfFile(lyr, dataset, opts));
     if (prj) files.push(prj);
     return files;
   }, []);

@@ -1,6 +1,30 @@
 
 // utility functions for layers
 
+
+// Insert a column of values into a (new or existing) data field
+internal.insertFieldValues = function(lyr, fieldName, values) {
+  var size = internal.getFeatureCount(lyr) || values.length,
+      table = lyr.data = (lyr.data || new DataTable(size)),
+      records = table.getRecords(),
+      rec, val;
+
+  for (var i=0, n=records.length; i<n; i++) {
+    rec = records[i];
+    val = values[i];
+    if (!rec) rec = records[i] = {};
+    rec[fieldName] = val === undefined ? null : val;
+  }
+};
+
+internal.getLayerDataTable = function(lyr) {
+  var data = lyr.data;
+  if (!data) {
+    data = lyr.data = new DataTable(lyr.shapes ? lyr.shapes.length : 0);
+  }
+  return data;
+};
+
 internal.layerHasGeometry = function(lyr) {
   return internal.layerHasPaths(lyr) || internal.layerHasPoints(lyr);
 };

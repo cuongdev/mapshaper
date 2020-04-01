@@ -1,4 +1,4 @@
-/* @requires mapshaper-encodings, mapshaper-file-reader */
+/* @requires mapshaper-file-reader */
 
 internal.GeoJSONReader = GeoJSONReader;
 

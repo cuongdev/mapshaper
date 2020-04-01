@@ -1,4 +1,7 @@
-/* @requires mapshaper-common, mapshaper-heap */
+import utils from 'utils/mapshaper-utils';
+import Heap from 'simplify/mapshaper-heap';
+import { error } from 'utils/mapshaper-logging';
+import geom from 'geom/mapshaper-geom';
 
 var Visvalingam = {};
 
@@ -144,3 +147,5 @@ Visvalingam.scaledSimplify = function(f) {
     }
   };
 };
+
+export default Visvalingam;

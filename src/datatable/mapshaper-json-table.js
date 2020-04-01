@@ -1,4 +1,3 @@
-/* @requires mapshaper-data-table */
 
 internal.importJSONTable = function(arr) {
   internal.fixInconsistentFields(arr);

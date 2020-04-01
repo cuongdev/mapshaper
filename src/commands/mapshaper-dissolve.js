@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-data-table
 mapshaper-data-aggregation
 mapshaper-point-dissolve
 mapshaper-polygon-dissolve

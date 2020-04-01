@@ -3,7 +3,6 @@ geojson-common
 geojson-reader
 mapshaper-file-reader
 mapshaper-path-import
-mapshaper-data-table
 */
 
 function GeoJSONParser(opts) {

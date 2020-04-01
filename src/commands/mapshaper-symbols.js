@@ -1,5 +1,5 @@
 
-/* @requires mapshaper-svg-arrows, mapshaper-data-utils */
+/* @requires mapshaper-svg-arrows */
 
 // TODO: refactor to remove duplication in mapshaper-svg-style.js
 api.symbols = function(lyr, opts) {

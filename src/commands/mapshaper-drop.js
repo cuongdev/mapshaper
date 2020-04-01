@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-data-utils mapshaper-polygon-holes */
+/* @requires mapshaper-common,  mapshaper-polygon-holes */
 
 api.drop2 = function(catalog, targets, opts) {
   targets.forEach(function(target) {

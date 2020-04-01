@@ -17,8 +17,6 @@ internal.findProjLibs = function(str) {
   return utils.uniq(matches.map(function(str) {return str.toLowerCase();}));
 };
 
-
-
 internal.looksLikeInitString = function(str) {
   return /^(esri|epsg|nad83|nad27):[0-9]+$/i.test(String(str));
 };
@@ -149,6 +147,12 @@ internal.getCRS = function(str) {
     }
   }
   return P || null;
+};
+
+internal.requireProjectedDataset = function(dataset) {
+  if (internal.isLatLngCRS(internal.getDatasetCRS(dataset))) {
+    stop("Command requires a target with projected coordinates (not lat-long)");
+  }
 };
 
 // @info: info property of source dataset (instead of crs object, so wkt string

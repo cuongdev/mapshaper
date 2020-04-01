@@ -1,7 +1,6 @@
 /* @requires
 shp-common
 shp-reader
-dbf-reader
 mapshaper-path-import
 */
 

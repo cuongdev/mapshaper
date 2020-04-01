@@ -1,4 +1,4 @@
-/* @requires mapshaper-data-table, mapshaper-data-utils, mapshaper-delim-reader, mapshaper-cli-utils */
+/* @requires mapshaper-delim-reader, mapshaper-cli-utils */
 
 // Convert a string containing delimited text data into a dataset object
 internal.importDelim = function(str, opts) {

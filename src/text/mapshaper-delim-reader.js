@@ -1,4 +1,4 @@
-/* @requires mapshaper-file-reader, mapshaper-encodings */
+/* @requires mapshaper-file-reader */
 
 // Read and parse a DSV file
 // This version performs field filtering before fields are extracted (faster)

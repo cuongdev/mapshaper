@@ -1,4 +1,6 @@
-/* @requires shp-record, mapshaper-file-reader */
+/* @requires mapshaper-file-reader */
+
+import ShpRecordClass from 'shapefile/shp-record';
 
 // Read data from a .shp file
 // @src is an ArrayBuffer, Node.js Buffer or filename

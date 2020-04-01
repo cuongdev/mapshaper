@@ -8,6 +8,8 @@ mapshaper-json-import
 mapshaper-delim-import
 */
 
+import { importDbfTable } from 'shapefile/dbf-import';
+
 // Parse content of one or more input files and return a dataset
 // @obj: file data, indexed by file type
 // File data objects have two properties:

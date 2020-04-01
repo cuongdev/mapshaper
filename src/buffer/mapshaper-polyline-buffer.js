@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-buffer-common
-mapshaper-shape-iter
 mapshaper-geodesic
 mapshaper-geojson
 mapshaper-path-buffer

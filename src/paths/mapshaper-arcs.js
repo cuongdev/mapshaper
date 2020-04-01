@@ -1,6 +1,7 @@
-/* @requires mapshaper-common, mapshaper-shape-iter */
+/* @requires mapshaper-common */
 
 import { calcArcBounds } from 'paths/mapshaper-arc-utils';
+import { ArcIter, FilteredArcIter, ShapeIter } from 'paths/mapshaper-shape-iter';
 
 // An interface for managing a collection of paths.
 // Constructor signatures:

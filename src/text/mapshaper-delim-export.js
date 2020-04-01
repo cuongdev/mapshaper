@@ -1,4 +1,3 @@
-/* @requires mapshaper-data-table, mapshaper-data-utils */
 
 // Generate output content from a dataset object
 internal.exportDelim = function(dataset, opts) {

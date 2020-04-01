@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-import
-dbf-import
 */
 
 api.importFiles = function(opts) {

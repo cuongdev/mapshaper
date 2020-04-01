@@ -1,6 +1,5 @@
-/* requires mbloch-utils */
 import utils from 'utils/mbloch-utils';
-import {BinArray, Transform, Bounds} from 'utils/mbloch-utils';
+export default utils;
 
 var Buffer = require('buffer').Buffer; // works with browserify
 

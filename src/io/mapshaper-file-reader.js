@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-encodings */
+/* @requires mapshaper-common */
 
 internal.FileReader = FileReader;
 internal.BufferReader = BufferReader;

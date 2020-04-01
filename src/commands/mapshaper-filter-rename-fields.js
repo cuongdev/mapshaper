@@ -1,4 +1,3 @@
-/* @requires mapshaper-data-table */
 
 api.filterFields = function(lyr, names) {
   var table = lyr.data;

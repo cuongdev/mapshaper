@@ -2,6 +2,10 @@
 import utils from 'utils/mbloch-utils';
 import internal from 'mapshaper-internal';
 
+// export for GUI
+internal.formatStringsAsGrid = formatStringsAsGrid;
+internal.formatLogArgs = formatLogArgs;
+
 // Handle an unexpected condition (internal error)
 export function error() {
  internal.error.apply(null, utils.toArray(arguments));
@@ -78,10 +82,28 @@ export function UserError(msg) {
   return err;
 }
 
+// Format an array of (preferably short) strings in columns for console logging.
+export function formatStringsAsGrid(arr) {
+  // TODO: variable column width
+  var longest = arr.reduce(function(len, str) {
+        return Math.max(len, str.length);
+      }, 0),
+      colWidth = longest + 2,
+      perLine = Math.floor(80 / colWidth) || 1;
+  return arr.reduce(function(memo, name, i) {
+    var col = i % perLine;
+    if (i > 0 && col === 0) memo += '\n';
+    if (col < perLine - 1) { // right-pad all but rightmost column
+      name = utils.rpad(name, colWidth - 2, ' ');
+    }
+    return memo +  '  ' + name;
+  }, '');
+}
+
 // expose so GUI can use it
-internal.formatLogArgs = function(args) {
+function formatLogArgs(args) {
   return utils.toArray(args).join(' ');
-};
+}
 
 function messageArgs(args) {
   var arr = utils.toArray(args);

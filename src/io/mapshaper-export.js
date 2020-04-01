@@ -8,9 +8,9 @@ mapshaper-rounding
 mapshaper-delim-export
 mapshaper-json-table
 mapshaper-output-format
-dbf-export
 */
 
+import { exportDbf } from 'shapefile/dbf-export';
 
 // @targets - non-empty output from Catalog#findCommandTargets()
 //
@@ -125,7 +125,7 @@ internal.exporters = {
   topojson: internal.exportTopoJSON,
   shapefile: internal.exportShapefile,
   dsv: internal.exportDelim,
-  dbf: internal.exportDbf,
+  dbf: exportDbf,
   json: internal.exportJSON,
   svg: internal.exportSVG
 };

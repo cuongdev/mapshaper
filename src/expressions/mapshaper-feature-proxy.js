@@ -4,7 +4,6 @@ mapshaper-polygon-centroid
 mapshaper-anchor-points
 mapshaper-arcs
 mapshaper-dataset-utils
-mapshaper-data-utils
 mapshaper-perimeter-calc
 */
 

@@ -3,8 +3,6 @@ mapshaper-common
 mapshaper-delim-import
 mapshaper-point-polygon-join
 mapshaper-polygon-polygon-join
-mapshaper-data-utils
-dbf-import
 mapshaper-join-filter
 mapshaper-join-calc
 */

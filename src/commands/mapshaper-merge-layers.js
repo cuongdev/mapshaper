@@ -1,4 +1,4 @@
-/* @require mapshaper-merging, mapshaper-data-utils, mapshaper-dataset-utils */
+/* @require mapshaper-merging, mapshaper-dataset-utils */
 
 // Merge layers, checking for incompatible geometries and data fields.
 api.mergeLayers = function(layersArg, opts) {
