@@ -1,5 +1,3 @@
-/* @requires mapshaper-common */
-
 
 // Returns a grid of [x,y] points so that point(c,r) == arr[r][c]
 // @f  Function for creating a [x,y] point at a given (col, row) position

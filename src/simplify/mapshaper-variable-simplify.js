@@ -1,4 +1,4 @@
-/* @requires mapshaper-simplify-pct */
+import { getThresholdFunction } from 'simplify/mapshaper-simplify-pct';
 
 api.variableSimplify = function(layers, dataset, opts) {
   var lyr = layers[0];
@@ -50,7 +50,7 @@ internal.getVariableResolutionFunction = function(exp, lyr, dataset, opts) {
 
 internal.getVariablePercentageFunction = function(exp, lyr, dataset, opts) {
   var compiled = internal.compileSimplifyExpression(exp, lyr, dataset.arcs);
-  var pctToInterval = internal.getThresholdFunction(dataset.arcs);
+  var pctToInterval = getThresholdFunction(dataset.arcs);
   return function(shpId) {
     var val = compiled(shpId);
     var pct = utils.parsePercent(val);

@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-dataset-utils
 mapshaper-overlay-utils
 mapshaper-intersection-cuts
 mapshaper-polygon-clipping

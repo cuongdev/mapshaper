@@ -20,7 +20,7 @@ internal.importFiles = function(files, opts) {
   // (but problem of mismatched coordinates due to quantization in input files.)
   if (unbuiltTopology && !opts.no_topology) {
     internal.cleanPathsAfterImport(combined, opts);
-    api.buildTopology(combined);
+    internal.buildTopology(combined);
   }
   return combined;
 };

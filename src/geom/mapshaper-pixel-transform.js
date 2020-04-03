@@ -1,4 +1,4 @@
-/* @require mapshaper-dataset-utils mapshaper-furniture */
+/* @require mapshaper-furniture */
 
 internal.transformDatasetToPixels = function(dataset, opts) {
   var frameLyr = internal.findFrameLayerInDataset(dataset);

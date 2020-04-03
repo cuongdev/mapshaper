@@ -1,6 +1,3 @@
-/* @requires
-mapshaper-path-index
-*/
 
 // Assumes: Arcs have been divided
 //

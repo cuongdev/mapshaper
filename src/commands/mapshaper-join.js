@@ -1,5 +1,4 @@
 /* @require
-mapshaper-common
 mapshaper-delim-import
 mapshaper-point-polygon-join
 mapshaper-polygon-polygon-join

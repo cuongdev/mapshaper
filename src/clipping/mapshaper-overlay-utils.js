@@ -29,7 +29,7 @@ internal.mergeLayersForOverlay = function(targetLayers, targetDataset, clipSrc, 
     // so arcs are shared between target layers and clipping lyr
     // Assumes that layers in clipDataset can be modified (if necessary, a copy should be passed in)
     mergedDataset = internal.mergeDatasets([targetDataset, clipDataset]);
-    api.buildTopology(mergedDataset); // identify any shared arcs between clipping layer and target dataset
+    internal.buildTopology(mergedDataset); // identify any shared arcs between clipping layer and target dataset
   } else {
     // overlay layer belongs to the same dataset as target layers... move it to the end
     mergedDataset = utils.extend({}, targetDataset);

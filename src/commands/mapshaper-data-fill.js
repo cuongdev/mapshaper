@@ -1,4 +1,5 @@
-/* @require mapshaper-common, mapshaper-polygon-neighbors */
+
+import { getNeighborLookupFunction } from 'polygons/mapshaper-polygon-neighbors';
 
 // This function creates a continuous mosaic of data values in a
 // given field by assigning data from adjacent polygon features to polygons
@@ -11,7 +12,7 @@ api.dataFill = function(lyr, arcs, opts) {
   if (!field) stop("Missing required field= parameter");
   internal.requireDataField(lyr, field);
   if (lyr.geometry_type != 'polygon') stop("Target layer must be polygon type");
-  var getNeighbors = internal.getNeighborLookupFunction(lyr, arcs);
+  var getNeighbors = getNeighborLookupFunction(lyr, arcs);
   var fillCount, islandCount;
 
   // get function to check if a shape was empty before data-fill

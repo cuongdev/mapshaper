@@ -1,4 +1,3 @@
-/* @requires mapshaper-expressions */
 
 internal.dissolvePointGeometry = function(lyr, getGroupId, opts) {
   var useSph = !opts.planar && internal.probablyDecimalDegreeBounds(internal.getLayerBounds(lyr));

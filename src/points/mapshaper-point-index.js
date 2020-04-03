@@ -1,4 +1,3 @@
-/* @requires mapshaper-point-utils */
 
 // TODO: use an actual index instead of linear search
 function PointIndex(shapes, opts) {

@@ -1,7 +1,3 @@
-/* @requires
-mapshaper-expressions
-mapshaper-dataset-utils
-*/
 
 api.uniq = function(lyr, arcs, opts) {
   var n = internal.getFeatureCount(lyr),

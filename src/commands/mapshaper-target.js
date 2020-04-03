@@ -1,4 +1,3 @@
-/* @require mapshaper-common */
 
 internal.target = function(catalog, opts) {
   var type = (opts.type || '').toLowerCase().replace('linestring', 'polyline');

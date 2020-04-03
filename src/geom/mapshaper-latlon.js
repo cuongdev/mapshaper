@@ -19,8 +19,3 @@ export function clampToWorldBounds(b) {
   return new Bounds().setBounds(Math.max(bbox[0], -180), Math.max(bbox[1], -90),
       Math.min(bbox[2], 180), Math.min(bbox[3], 90));
 }
-
-// TOOD: remove when possible
-internal.getWorldBounds = getWorldBounds;
-internal.probablyDecimalDegreeBounds = probablyDecimalDegreeBounds;
-internal.clampToWorldBounds = clampToWorldBounds;

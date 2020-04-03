@@ -1,5 +1,9 @@
-/* @requires mapshaper-arcs */
 
+import { getHighPrecisionSnapInterval } from 'paths/mapshaper-snapping';
+import { debug } from 'utils/mapshaper-logging';
+
+// TODO: remove
+import geom from 'geom/mapshaper-geom';
 geom.segmentIntersection = segmentIntersection;
 geom.segmentHit = segmentHit;
 geom.orient2D = orient2D;
@@ -14,11 +18,11 @@ geom.findClosestPointOnSeg = findClosestPointOnSeg;
 // If the segments are collinear and partially overlapping, each subsumed endpoint
 //    is counted as an intersection (there will be either one or two)
 //
-function segmentIntersection(ax, ay, bx, by, cx, cy, dx, dy, epsArg) {
+export function segmentIntersection(ax, ay, bx, by, cx, cy, dx, dy, epsArg) {
   // Use a small tolerance interval, so collinear segments and T-intersections
   // are detected (floating point rounding often causes exact functions to fail)
   var eps = epsArg >= 0 ? epsArg :
-      internal.getHighPrecisionSnapInterval([ax, ay, bx, by, cx, cy, dx, dy]);
+      getHighPrecisionSnapInterval([ax, ay, bx, by, cx, cy, dx, dy]);
   var epsSq = eps * eps;
   var touches, cross;
   // Detect 0, 1 or 2 'touch' intersections, where a vertex of one segment
@@ -124,7 +128,7 @@ function collectPointSegTouch(arr, epsSq, px, py, ax, ay, bx, by) {
 // Used by mapshaper-undershoots.js
 // TODO: make more robust, make sure result is compatible with segmentIntersection()
 // (rounding errors currently must be handled downstream)
-function findClosestPointOnSeg(px, py, ax, ay, bx, by) {
+export function findClosestPointOnSeg(px, py, ax, ay, bx, by) {
   var dx = bx - ax,
       dy = by - ay,
       dotp = (px - ax) * dx + (py - ay) * dy,
@@ -217,14 +221,14 @@ function determinant2D(a, b, c, d) {
 // counterclockwise order, a negative value if the points are in clockwise
 // order, and zero if the points are collinear.
 // Source: Jonathan Shewchuk http://www.cs.berkeley.edu/~jrs/meshpapers/robnotes.pdf
-function orient2D(ax, ay, bx, by, cx, cy) {
+export function orient2D(ax, ay, bx, by, cx, cy) {
   return determinant2D(ax - cx, ay - cy, bx - cx, by - cy);
 }
 
 // Source: Sedgewick, _Algorithms in C_
 // (Other functions were tried that were more sensitive to floating point errors
 //  than this function)
-function segmentHit(ax, ay, bx, by, cx, cy, dx, dy) {
+export function segmentHit(ax, ay, bx, by, cx, cy, dx, dy) {
   return orient2D(ax, ay, bx, by, cx, cy) *
       orient2D(ax, ay, bx, by, dx, dy) <= 0 &&
       orient2D(cx, cy, dx, dy, ax, ay) *

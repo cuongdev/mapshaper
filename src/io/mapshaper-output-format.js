@@ -1,4 +1,4 @@
-/* @requires mapshaper-file-types */
+
 internal.getOutputFormat = function(dataset, opts) {
   var outFile = opts.file || null,
       inFmt = dataset.info && dataset.info.input_formats && dataset.info.input_formats[0],

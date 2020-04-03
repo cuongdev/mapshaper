@@ -1,7 +1,6 @@
 /* @requires
 geojson-common
 geojson-reader
-mapshaper-file-reader
 mapshaper-path-import
 */
 

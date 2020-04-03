@@ -1,4 +1,3 @@
-/* @requires mapshaper-common, mapshaper-shape-utils */
 
 api.explodeFeatures = function(lyr, arcs, opts) {
   var properties = lyr.data ? lyr.data.getRecords() : null,

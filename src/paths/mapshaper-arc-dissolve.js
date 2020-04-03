@@ -1,8 +1,6 @@
 /* @requires
 mapshaper-nodes
 mapshaper-path-endpoints
-mapshaper-path-utils
-mapshaper-dataset-utils
 */
 
 // Dissolve arcs that can be merged without affecting topology of layers

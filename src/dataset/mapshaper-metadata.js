@@ -1,4 +1,3 @@
-/* @require mapshaper-projections */
 
 internal.importMetadata = function(dataset, obj) {
   if (obj.proj4) {

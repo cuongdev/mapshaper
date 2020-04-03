@@ -1,4 +1,4 @@
-/* @require mapshaper-geojson, mapshaper-dataset-utils */
+/* @require mapshaper-geojson */
 
 api.shape = function(opts) {
   var coords = opts.coordinates;

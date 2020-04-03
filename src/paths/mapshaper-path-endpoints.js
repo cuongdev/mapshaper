@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-utils */
 
 // Test if the second endpoint of an arc is the endpoint of any path in any layer
 internal.getPathEndpointTest = function(layers, arcs) {

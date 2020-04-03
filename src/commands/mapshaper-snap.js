@@ -1,6 +1,3 @@
-/* @requires
-mapshaper-common
-*/
 
 api.snap = function(dataset, opts) {
   var interval = 0;
@@ -19,6 +16,6 @@ api.snap = function(dataset, opts) {
   message(utils.format("Snapped %s point%s", snapCount, utils.pluralSuffix(snapCount)));
   if (snapCount > 0) {
     arcs.dedupCoords();
-    api.buildTopology(dataset);
+    internal.buildTopology(dataset);
   }
 };

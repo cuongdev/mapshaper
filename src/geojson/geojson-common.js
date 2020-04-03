@@ -1,6 +1,3 @@
-/* @requires
-mapshaper-common
-*/
 
 var GeoJSON = {};
 GeoJSON.ID_FIELD = "FID"; // default field name of imported *JSON feature ids

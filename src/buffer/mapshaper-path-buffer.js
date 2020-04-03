@@ -1,4 +1,4 @@
-
+import { ShapeIter } from 'paths/mapshaper-shape-iter';
 
 // Returns a function for generating GeoJSON geometries (MultiLineString or MultiPolygon)
 internal.getPolylineBufferMaker = function(arcs, geod, getBearing, opts) {

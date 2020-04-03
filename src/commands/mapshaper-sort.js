@@ -1,7 +1,3 @@
-/* @requires
-mapshaper-expressions
-mapshaper-dataset-utils
-*/
 
 api.sortFeatures = function(lyr, arcs, opts) {
   var n = internal.getFeatureCount(lyr),

@@ -1,4 +1,4 @@
-/* @requires mapshaper-dataset-utils, geojson-import */
+/* @requires geojson-import */
 
 api.pointGrid = function(dataset, opts) {
   var gridOpts = internal.getPointGridParams(dataset, opts);

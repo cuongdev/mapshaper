@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 // @expression: optional field name or expression
 //

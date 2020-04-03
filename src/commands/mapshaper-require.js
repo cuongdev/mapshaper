@@ -1,4 +1,4 @@
-/* @requires mapshaper-run, mapshaper-expressions */
+/* @requires mapshaper-run */
 
 api.require = function(targets, opts) {
   var defs = internal.getStateVar('defs');

@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-geom */
 
 // Get the centroid of the largest ring of a polygon
 // TODO: Include holes in the calculation

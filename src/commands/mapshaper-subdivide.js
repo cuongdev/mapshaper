@@ -1,4 +1,4 @@
-/* @requires mapshaper-dataset-utils, mapshaper-calc */
+/* @requires mapshaper-calc */
 
 // Recursively divide a layer into two layers until a (compiled) expression
 // no longer returns true. The original layer is split along the long side of

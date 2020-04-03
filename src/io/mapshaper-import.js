@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-common
 mapshaper-geojson
 mapshaper-topojson
 mapshaper-shapefile
@@ -53,7 +52,7 @@ internal.importContent = function(obj, opts) {
 
   // Convert to topological format, if needed
   if (dataset.arcs && !opts.no_topology && fileFmt != 'topojson') {
-    api.buildTopology(dataset);
+    internal.buildTopology(dataset);
   }
 
   // Use file basename for layer name, except TopoJSON, which uses object names

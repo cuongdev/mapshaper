@@ -1,30 +1,15 @@
 /* @requires
+mapshaper-common
 mapshaper-commands
-mapshaper-cli-utils
 mapshaper-bbox-clipping
 */
 
-api.cli = cli;
-api.internal = internal;
-api.utils = utils;
-api.geom = geom;
-
-// Maintain compatibility between ESM modules and current tests
-import exports from 'esm-exports';
-Object.assign(api.internal, exports.internal);
-
 // Expose internal objects for testing
 utils.extend(api.internal, {
-  Catalog: Catalog,
-  ShpReader: ShpReader,
-  ArcCollection: ArcCollection,
   NodeCollection: NodeCollection,
-  PolygonIndex: PolygonIndex,
-  PathIndex: PathIndex,
   topojson: TopoJSON,
   geojson: GeoJSON,
-  svg: SVG,
-  UserError: UserError
+  svg: SVG
 });
 
 if (typeof define === "function" && define.amd) {

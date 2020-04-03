@@ -1,7 +1,3 @@
-/* @requires
-mapshaper-path-index
-mapshaper-shape-utils
-*/
 
 //
 internal.clipPoints = function(points, clipShapes, arcs, type) {

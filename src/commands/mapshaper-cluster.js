@@ -1,7 +1,4 @@
 /* @requires
-mapshaper-polygon-neighbors
-mapshaper-common
-mapshaper-shape-geom
 mapshaper-polygon-centroid
 */
 

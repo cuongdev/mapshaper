@@ -1,18 +1,4 @@
 import { formatStringsAsGrid } from 'utils/mapshaper-logging';
-import internal from 'mapshaper-internal';
-
-// TODO: switch to module imports everywhere
-internal.getEncodings = getEncodings;
-internal.decodeString = decodeString;
-internal.encodeString = encodeString;
-internal.encodingIsUtf8 = encodingIsUtf8;
-internal.validateEncoding = validateEncoding;
-internal.encodingIsAsciiCompat = encodingIsAsciiCompat;
-internal.bufferToString = bufferToString;
-internal.encodingIsSupported = encodingIsSupported;
-internal.trimBOM = trimBOM;
-internal.printEncodings = printEncodings;
-internal.standardizeEncodingName = standardizeEncodingName;
 
 // List of encodings supported by iconv-lite:
 // https://github.com/ashtuchkin/iconv-lite/wiki/Supported-Encodings
@@ -42,7 +28,7 @@ export function encodingIsUtf8(enc) {
 // Identify the most common encodings that are supersets of ascii at the
 // single-byte level (meaning that bytes in 0 - 0x7f range must be ascii)
 // (this allows identifying line breaks and other ascii patterns in buffers)
-function encodingIsAsciiCompat(enc) {
+export function encodingIsAsciiCompat(enc) {
   enc = standardizeEncodingName(enc);
   // gb.* selects the Guo Biao encodings
   // big5 in not compatible -- second byte starts at 0x40

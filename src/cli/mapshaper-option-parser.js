@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-option-parsing-utils */
+/* @requires mapshaper-option-parsing-utils */
 
 function CommandParser() {
   var commandRxp = /^--?([a-z][\w-]*)$/i,

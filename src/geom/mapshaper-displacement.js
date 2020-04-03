@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 internal.displacePoints = function(lyr, opts) {
   if (lyr.geometry_type != 'point') {

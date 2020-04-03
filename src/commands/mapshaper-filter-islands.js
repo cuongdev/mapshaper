@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-filter,
-mapshaper-shape-utils
 mapshaper-slivers
 */
 

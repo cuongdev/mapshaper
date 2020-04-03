@@ -1,4 +1,3 @@
-/* @require mapshaper-arcs, mapshaper-shape-geom */
 
 api.keepEveryPolygon =
 internal.keepEveryPolygon = function(arcData, layers) {

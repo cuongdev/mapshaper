@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 internal.getMode = function(values) {
   var data = internal.getModeData(values);

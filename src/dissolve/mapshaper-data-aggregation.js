@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-join-calc */
+/* @requires mapshaper-join-calc */
 
 // Return a function to convert indexes of original features into indexes of grouped features
 // Uses categorical classification (a different id for each unique combination of values)

@@ -2,7 +2,7 @@
 import utils from 'utils/mapshaper-utils';
 import { copyRecord, findFieldNames } from 'datatable/mapshaper-data-utils';
 
-export default function DataTable(obj) {
+export function DataTable(obj) {
   var records;
   if (utils.isArray(obj)) {
     records = obj;

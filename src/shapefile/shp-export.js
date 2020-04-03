@@ -1,8 +1,5 @@
 /* @requires
-shp-common
 mapshaper-path-export
-mapshaper-projections
-mapshaper-shape-utils
 */
 
 import { exportDbfFile } from 'shapefile/dbf-export';

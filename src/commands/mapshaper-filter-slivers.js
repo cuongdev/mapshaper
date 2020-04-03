@@ -1,4 +1,4 @@
-/* @require mapshaper-filter-islands, mapshaper-segment-geom, mapshaper-slivers */
+/* @require mapshaper-filter-islands, mapshaper-slivers */
 
 // Remove small-area polygon rings (very simple implementation of sliver removal)
 // TODO: more sophisticated sliver detection (e.g. could consider ratio of area to perimeter)

@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 // Returns a search function
 // Receives array of objects to index; objects must have a 'bounds' member

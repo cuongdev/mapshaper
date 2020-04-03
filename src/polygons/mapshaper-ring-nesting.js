@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-utils, mapshaper-path-index */
 
 // Delete rings that are nested directly inside an enclosing ring with the same winding direction
 // Does not remove unenclosed CCW rings (currently this causes problems when

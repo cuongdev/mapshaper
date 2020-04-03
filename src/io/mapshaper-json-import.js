@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 // Identify JSON type from the initial subset of a JSON string
 internal.identifyJSONString = function(str, opts) {

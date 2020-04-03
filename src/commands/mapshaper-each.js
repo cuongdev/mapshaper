@@ -1,7 +1,3 @@
-/* @requires
-mapshaper-expressions
-mapshaper-dataset-utils
-*/
 
 api.evaluateEachFeature = function(lyr, arcs, exp, opts) {
   var n = internal.getFeatureCount(lyr),

@@ -1,6 +1,6 @@
 /* @requires mapshaper-simplify-stats */
 
-import Visvalingam from 'simplify/mapshaper-visvalingam';
+// import Visvalingam from 'simplify/mapshaper-visvalingam';
 
 internal.getSimplifyMethodLabel = function(slug) {
   return {

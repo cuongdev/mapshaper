@@ -1,4 +1,5 @@
-/* @require mapshaper-common */
+
+import { initPointChains } from 'topology/mapshaper-topology-chains-v2';
 
 // @arcs ArcCollection
 // @filter Optional filter function, arcIds that return false are excluded

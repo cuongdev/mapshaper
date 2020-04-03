@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-common
 mapshaper-geojson
 */
 

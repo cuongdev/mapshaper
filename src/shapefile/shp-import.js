@@ -1,6 +1,4 @@
 /* @requires
-shp-common
-shp-reader
 mapshaper-path-import
 */
 

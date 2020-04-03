@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, topojson-import, topojson-arc-prune */
+/* @requires topojson-import, topojson-arc-prune */
 
 // not in use
 

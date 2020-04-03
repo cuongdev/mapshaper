@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 internal.splitShellTokens = function(str) {
   var BAREWORD = '([^\'"\\s])+';

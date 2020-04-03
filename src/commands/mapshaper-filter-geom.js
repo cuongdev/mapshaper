@@ -1,4 +1,3 @@
-/* @requires mapshaper-common, mapshaper- */
 
 api.filterGeom = function(lyr, arcs, opts) {
   if (!internal.layerHasGeometry(lyr)) {

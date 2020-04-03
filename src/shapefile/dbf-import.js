@@ -1,7 +1,7 @@
 
 import DbfReader from 'shapefile/dbf-reader';
 import Dbf from 'shapefile/dbf-writer';
-import DataTable from 'datatable/mapshaper-data-table';
+import { DataTable } from 'datatable/mapshaper-data-table';
 
 // TODO: remove
 import internal from 'mapshaper-internal';

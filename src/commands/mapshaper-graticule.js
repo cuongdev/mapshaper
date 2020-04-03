@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-geojson
-mapshaper-projections
 mapshaper-merging
 */
 

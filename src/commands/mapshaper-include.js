@@ -1,4 +1,3 @@
-/* @requires mapshaper-cli-utils, mapshaper-expressions */
 
 internal.include = function(opts) {
   var content, obj, context;

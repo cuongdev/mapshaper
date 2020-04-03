@@ -1,14 +1,16 @@
-/* @requires mapshaper-common */
 
-internal.FileReader = FileReader;
-internal.BufferReader = BufferReader;
+import { bufferToString } from 'text/mapshaper-encodings';
+import utils from 'utils/mapshaper-utils';
+import internal from 'mapshaper-internal';
+import { BinArray } from 'utils/mbloch-utils';
+import cli from 'cli/mapshaper-cli-utils';
 
-internal.readFirstChars = function(reader, n) {
-  return internal.bufferToString(reader.readSync(0, Math.min(n || 1000, reader.size())));
-};
+export function readFirstChars(reader, n) {
+  return bufferToString(reader.readSync(0, Math.min(n || 1000, reader.size())));
+}
 
 // Wraps a BufferReader or FileReader with an API that keeps track of position in the file
-function Reader2(reader) {
+export function Reader2(reader) {
   var offs = 0; // read-head position in bytes
 
   this.position = function() {return offs;};
@@ -31,7 +33,7 @@ function Reader2(reader) {
 }
 
 // Same interface as FileReader, for reading from a Buffer or ArrayBuffer instead of a file.
-function BufferReader(src) {
+export function BufferReader(src) {
   var bufSize = src.byteLength || src.length,
       binArr, buf;
 
@@ -43,7 +45,7 @@ function BufferReader(src) {
   };
 
   this.toString = function(enc) {
-    return internal.bufferToString(buffer(), enc);
+    return bufferToString(buffer(), enc);
   };
 
   this.readSync = function(start, length) {
@@ -64,7 +66,7 @@ function BufferReader(src) {
   this.close = function() {};
 }
 
-function FileReader(path, opts) {
+export function FileReader(path, opts) {
   var fs = require('fs'),
       fileLen = fs.statSync(path).size,
       DEFAULT_CACHE_LEN = opts && opts.cacheSize || 0x1000000, // 16MB

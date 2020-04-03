@@ -1,4 +1,3 @@
-/* @requires mapshaper-projections */
 
 internal.getGeodesic = function(dataset) {
   var P = internal.getDatasetCRS(dataset);

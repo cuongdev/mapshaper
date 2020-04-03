@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-geom */
 
 // Returns x,y coordinates of the vertex that is closest to the bbox center point
 //   (uses part with the largest-area bbox in )

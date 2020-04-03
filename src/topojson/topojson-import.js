@@ -1,7 +1,5 @@
 /* @requires
 topojson-common
-mapshaper-point-utils
-mapshaper-shape-geom
 mapshaper-rounding
 mapshaper-metadata
 */

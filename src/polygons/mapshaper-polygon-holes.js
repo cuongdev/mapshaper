@@ -1,7 +1,5 @@
 /* @require
 mapshaper-self-intersection
-mapshaper-shape-utils
-mapshaper-shape-geom
 */
 // __mapshaper-self-intersection-v1
 

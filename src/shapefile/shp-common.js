@@ -1,6 +1,6 @@
 import ShpType from 'shapefile/shp-type';
 
-internal.translateShapefileType = function(shpType) {
+export function translateShapefileType(shpType) {
   if ([ShpType.POLYGON, ShpType.POLYGONM, ShpType.POLYGONZ].includes(shpType)) {
     return 'polygon';
   } else if ([ShpType.POLYLINE, ShpType.POLYLINEM, ShpType.POLYLINEZ].includes(shpType)) {
@@ -10,8 +10,8 @@ internal.translateShapefileType = function(shpType) {
     return 'point';
   }
   return null;
-};
+}
 
-internal.isSupportedShapefileType = function(t) {
+export function isSupportedShapefileType(t) {
   return [0,1,3,5,8,11,13,15,18,21,23,25,28].includes(t);
-};
+}

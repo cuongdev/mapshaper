@@ -1,4 +1,4 @@
-/* @requires mapshaper-info, mapshaper-expressions, mapshaper-shape-geom */
+/* @requires mapshaper-info */
 
 api.inspect = function(lyr, arcs, opts) {
   var ids = internal.selectFeatures(lyr, arcs, opts);

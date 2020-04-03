@@ -1,4 +1,4 @@
-/* @require mapshaper-geojson, mapshaper-dataset-utils */
+/* @require mapshaper-geojson */
 
 // Create rectangles around each feature in a layer
 api.rectangles = function(targetLyr, targetDataset, opts) {

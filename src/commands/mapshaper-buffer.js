@@ -2,7 +2,6 @@
 mapshaper-point-buffer
 mapshaper-polyline-buffer
 mapshaper-polygon-buffer
-mapshaper-dataset-utils
 */
 
 // returns a dataset

@@ -1,7 +1,5 @@
 /* @requires
 mapshaper-segment-intersection,
-mapshaper-dataset-utils,
-mapshaper-path-index
 mapshaper-polygon-repair
 mapshaper-units
 */
@@ -66,7 +64,7 @@ internal.snapAndCut = function(dataset, snapDist) {
   // why was topology built here previously????
   // if (snapCount > 0 || dupeCount > 0) {
   //   // Detect topology again if coordinates have changed
-  //   api.buildTopology(dataset);
+  //   internal.buildTopology(dataset);
   // }
 
   // cut arcs at points where segments intersect
@@ -89,7 +87,7 @@ internal.snapAndCut = function(dataset, snapDist) {
   }
   // Detect topology again if coordinates have changed
   if (coordsHaveChanged) {
-    api.buildTopology(dataset);
+    internal.buildTopology(dataset);
   }
 };
 

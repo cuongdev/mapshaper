@@ -1,7 +1,6 @@
 /* @requires
 mapshaper-pathfinder
 mapshaper-polygon-dissolver
-mapshaper-path-index
 */
 
 // TODO: remove dependency on old polygon dissolve function

@@ -1,4 +1,4 @@
-/* @requires mapshaper-shape-geom mapshaper-simplify-fast */
+/* @requires mapshaper-simplify-fast */
 
 
 // Find a point inside a polygon and located away from the polygon edge

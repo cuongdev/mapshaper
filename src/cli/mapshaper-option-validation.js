@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-file-types, mapshaper-option-parser, mapshaper-units */
+/* @requires mapshaper-option-parser, mapshaper-units */
 
 
 function validateInputOpts(cmd) {

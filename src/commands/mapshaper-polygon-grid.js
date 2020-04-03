@@ -19,7 +19,7 @@ api.polygonGrid = function(targetLayers, targetDataset, opts) {
   internal.alignGridToBounds(geojson, params.bbox);
   var gridDataset = internal.importGeoJSON(geojson, {});
   gridDataset.info = targetDataset.info; // copy CRS to grid dataset // TODO: improve
-  api.buildTopology(gridDataset);
+  internal.buildTopology(gridDataset);
   gridDataset.layers[0].name = opts.name || 'grid';
   if (opts.debug) gridDataset.layers.push(api.pointGrid2(targetLayers, targetDataset, opts));
   return gridDataset;

@@ -125,3 +125,24 @@ utils.uniqifyNames = function(names, formatter) {
   });
   return names2;
 };
+
+// Remove comma separators from strings
+// TODO: accept European-style numbers?
+utils.cleanNumericString = function(str) {
+  return (str.indexOf(',') > 0) ? str.replace(/,([0-9]{3})/g, '$1') : str;
+};
+
+// Assume: @raw is string, undefined or null
+utils.parseString = function(raw) {
+  return raw ? raw : "";
+};
+
+// Assume: @raw is string, undefined or null
+// Use null instead of NaN for unparsable values
+// (in part because if NaN is used, empty strings get converted to "NaN"
+// when re-exported).
+utils.parseNumber = function(raw) {
+  var str = String(raw).trim();
+  var parsed = str ? Number(utils.cleanNumericString(str)) : NaN;
+  return isNaN(parsed) ? null : parsed;
+};

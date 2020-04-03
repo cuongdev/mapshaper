@@ -2,7 +2,6 @@
 geojson-common
 mapshaper-stringify
 mapshaper-path-export
-mapshaper-dataset-utils
 mapshaper-merge-layers
 */
 

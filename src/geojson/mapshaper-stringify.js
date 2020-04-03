@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 internal.getFormattedStringify = function(numArrayKeys) {
   var keyIndex = utils.arrayToIndex(numArrayKeys);

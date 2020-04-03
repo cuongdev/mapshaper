@@ -1,7 +1,5 @@
 /* @requires
-mapshaper-projections
 mapshaper-arc-editor
-mapshaper-shape-utils
 */
 
 api.proj = function(dataset, destInfo, opts) {

@@ -346,6 +346,22 @@ function getDotScale(ext) {
   return Math.pow(getLineScale(ext), 0.7);
 }
 
+function countPoints(shapes, test, max) {
+  var count = 0;
+  var i, n, j, m, shp;
+  max = max || Infinity;
+  for (i=0, n=shapes.length; i<n && count<=max; i++) {
+    shp = shapes[i];
+    for (j=0, m=shp ? shp.length : 0; j<m; j++) {
+      if (!test || test(shp[j])) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+
 function getDotScale2(shapes, ext) {
   var pixRatio = GUI.getPixelRatio();
   var scale = ext.scale();
@@ -358,7 +374,7 @@ function getDotScale2(shapes, ext) {
       return bounds.containsPoint(p[0], p[1]);
     };
   }
-  n = internal.countPoints2(shapes, test, topTier + 2); // short-circuit point counting above top threshold
+  n = countPoints(shapes, test, topTier + 2); // short-circuit point counting above top threshold
   k = n >= topTier && 0.25 || n > 10000 && 0.45 || n > 2500 && 0.65 || n > 200 && 0.85 || 1;
   j = side < 200 && 0.5 || side < 400 && 0.75 || 1;
   return getDotScale(ext) * k * j * pixRatio;

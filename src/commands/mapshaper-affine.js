@@ -1,4 +1,3 @@
-/* @requires mapshaper-arcs, mapshaper-shape-utils */
 
 // Apply rotation, scale and/or shift to some or all of the features in a dataset
 //

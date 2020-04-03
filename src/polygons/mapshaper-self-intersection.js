@@ -1,4 +1,4 @@
-/* @requires mapshaper-common, mapshaper-id-test-index */
+/* @requires mapshaper-id-test-index */
 
 // Returns a function for splitting self-intersecting polygon rings
 // The splitter function receives a single polygon ring represented as an array

@@ -1,4 +1,12 @@
-/* @requires mapshaper-common, mapshaper-projections */
+
+internal.mergeDatasetsIntoDataset = function(dataset, datasets) {
+  var merged = internal.mergeDatasets([dataset].concat(datasets));
+  var mergedLayers = datasets.reduce(function(memo, dataset) {
+    return memo.concat(dataset.layers);
+  }, []);
+  dataset.arcs = merged.arcs;
+  return mergedLayers;
+};
 
 // Don't modify input layers (mergeDatasets() updates arc ids in-place)
 internal.mergeDatasetsForExport = function(arr) {
@@ -27,7 +35,7 @@ internal.mergeCommandTargets = function(targets, catalog) {
 
   // Rebuild topology, if multiple datasets contain arcs
   if (datasetsWithArcs > 1) {
-    api.buildTopology(merged);
+    internal.buildTopology(merged);
   }
 
   // remove old datasets after merging, so catalog is not affected if merge throws an error

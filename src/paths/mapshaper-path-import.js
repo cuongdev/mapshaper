@@ -1,8 +1,5 @@
 /* @requires
 mapshaper-rounding,
-mapshaper-shape-geom,
-mapshaper-snapping,
-mapshaper-shape-utils,
 mapshaper-polygon-repair
 mapshaper-units
 */

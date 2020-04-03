@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-dataset-utils
 mapshaper-polygon-centroid
 mapshaper-anchor-points
 mapshaper-inner-points

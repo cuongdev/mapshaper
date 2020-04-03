@@ -1,4 +1,4 @@
-/* @requires mapshaper-run-command, mapshaper-parse-commands, mapshaper-catalog */
+/* @requires mapshaper-run-command, mapshaper-parse-commands */
 
 import { createAsyncContext } from 'mapshaper-internal';
 

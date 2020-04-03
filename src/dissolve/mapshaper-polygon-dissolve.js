@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-utils */
 
 function dissolvePolygonGeometry(shapes, getGroupId) {
   var segments = dissolveFirstPass(shapes, getGroupId);

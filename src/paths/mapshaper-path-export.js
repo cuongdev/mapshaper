@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-utils */
 
 internal.exportPointData = function(points) {
   var data, path;

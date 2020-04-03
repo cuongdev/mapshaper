@@ -1,4 +1,3 @@
-/* @require mapshaper-segment-geom */
 
 // Return an array containing points from a path iterator, clipped to a bounding box
 // Currently using this function for clipping styled polygons in the GUI to speed up layer rendering.

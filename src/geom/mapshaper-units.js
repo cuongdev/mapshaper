@@ -1,4 +1,3 @@
-/* @requires mapshaper-projections */
 
 var UNITS_LOOKUP = {
   m: 'meters',

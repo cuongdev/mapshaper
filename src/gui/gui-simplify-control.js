@@ -1,4 +1,4 @@
-/* @requires gui-elements, gui-slider, mapshaper-simplify-pct */
+/* @requires gui-elements, gui-slider */
 
 /*
 How changes in the simplify control should affect other components

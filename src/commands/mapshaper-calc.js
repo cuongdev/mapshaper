@@ -1,6 +1,4 @@
 /* @requires
-mapshaper-expressions
-mapshaper-dataset-utils
 mapshaper-filter
 mapshaper-calc-utils
 */

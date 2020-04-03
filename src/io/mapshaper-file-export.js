@@ -1,4 +1,3 @@
-/* @require mapshaper-common */
 
 internal.writeFiles = function(exports, opts, cb) {
   if (exports.length > 0 === false) {

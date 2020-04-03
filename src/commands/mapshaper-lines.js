@@ -1,4 +1,4 @@
-/* @requires mapshaper-shape-utils, mapshaper-arc-classifier, mapshaper-point-utils */
+
 
 api.lines = function(lyr, dataset, opts) {
   opts = opts || {};
@@ -56,7 +56,7 @@ internal.convertShapesToSegments = function(lyr, dataset) {
   }
   var merged = internal.mergeDatasets([dataset, internal.importGeoJSON(geojson, {})]);
   dataset.arcs = merged.arcs;
-  // api.buildTopology(dataset);
+  // internal.buildTopology(dataset);
   return merged.layers.pop();
 };
 

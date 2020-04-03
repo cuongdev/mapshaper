@@ -1,4 +1,4 @@
-/* @requires mapshaper-path-index, mapshaper-point-index */
+/* @requires mapshaper-point-index */
 
 api.joinPointsToPolygons = function(targetLyr, arcs, pointLyr, opts) {
   // TODO: option to copy points that can't be joined to a new layer

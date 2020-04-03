@@ -1,8 +1,5 @@
 /* @requires
-mapshaper-common
-mapshaper-dataset-utils
 mapshaper-nodes
-mapshaper-projections
 */
 
 var MAX_RULE_LEN = 50;

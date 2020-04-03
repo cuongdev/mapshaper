@@ -1,4 +1,3 @@
-/* @requires mapshaper-expressions, mapshaper-shape-geom, mapshaper-shape-utils */
 
 api.filterFeatures = function(lyr, arcs, opts) {
   var records = lyr.data ? lyr.data.getRecords() : null,

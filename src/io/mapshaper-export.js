@@ -3,7 +3,6 @@ mapshaper-geojson
 mapshaper-topojson
 mapshaper-shapefile
 mapshaper-svg
-mapshaper-dataset-utils
 mapshaper-rounding
 mapshaper-delim-export
 mapshaper-json-table
@@ -36,7 +35,7 @@ internal.exportDatasets = function(datasets, opts) {
         // files derived from the same source, with matching coordinates
         // (Downsides: useless work if geometry is unrelated;
         // could create many small arcs if layers are partially related)
-        api.buildTopology(datasets[0]);
+        internal.buildTopology(datasets[0]);
       }
       // KLUDGE let exporter know that copying is not needed
       // (because shape data was deep-copied during merge)

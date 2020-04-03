@@ -1,4 +1,3 @@
-/* @requires mapshaper-shape-utils */
 
 // Return an interior point for each space-containing ring
 internal.findInnerPoints = function(shp, arcs) {

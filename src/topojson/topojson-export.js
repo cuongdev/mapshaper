@@ -1,12 +1,9 @@
 /* @requires
 topojson-common
 topojson-presimplify
-mapshaper-shape-geom
 mapshaper-arc-dissolve
 mapshaper-explode
 mapshaper-stringify
-mapshaper-dataset-utils
-mapshaper-segment-geom
 mapshaper-pixel-transform
 mapshaper-metadata
 */

@@ -1,4 +1,4 @@
-/* @require mapshaper-rectangle, mapshaper-projections, mapshaper-furniture */
+/* @require mapshaper-rectangle, mapshaper-furniture */
 
 api.frame = function(catalog, source, opts) {
   var size, bounds, tmp, dataset;

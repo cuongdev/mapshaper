@@ -1,12 +1,11 @@
 /* @requires
-mapshaper-dataset-utils
 mapshaper-post-simplify-repair
 mapshaper-simplify-info
 */
 
 // TODO: import Visvalingam after simplify-info is ported to ESM
 // import Visvalingam from 'simplify/mapshaper-visvalingam';
-import DouglasPeucker from 'simplify/mapshaper-dp';
+// import DouglasPeucker from 'simplify/mapshaper-dp';
 
 api.simplify = function(dataset, opts) {
   var arcs = dataset.arcs;

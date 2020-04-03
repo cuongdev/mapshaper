@@ -1,10 +1,3 @@
-import internal from 'mapshaper-internal';
-
-// TODO: remove when possible
-internal.PointIter = PointIter;
-internal.ArcIter = ArcIter;
-internal.ShapeIter = ShapeIter;
-internal.FilteredArcIter = FilteredArcIter;
 
 // Coordinate iterators
 //
@@ -19,7 +12,7 @@ internal.FilteredArcIter = FilteredArcIter;
 
 // Iterate over an array of [x, y] points
 //
-function PointIter(points) {
+export function PointIter(points) {
   var n = points.length,
       i = 0,
       iter = {

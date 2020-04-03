@@ -1,11 +1,12 @@
-/* @requires
-mapshaper-shape-geom
+/*
 mapshaper-polygon-centroid
 mapshaper-anchor-points
-mapshaper-arcs
-mapshaper-dataset-utils
-mapshaper-perimeter-calc
 */
+
+import { getInnerPctCalcFunction } from 'geom/mapshaper-perimeter-calc';
+import geom from 'geom/mapshaper-geom';
+import internal from 'mapshaper-internal';
+import utils from 'utils/mapshaper-utils';
 
 function addGetters(obj, getters) {
   Object.keys(getters).forEach(function(name) {
@@ -13,7 +14,7 @@ function addGetters(obj, getters) {
   });
 }
 
-internal.initFeatureProxy = function(lyr, arcs) {
+export function initFeatureProxy(lyr, arcs) {
   var hasPoints = internal.layerHasPoints(lyr),
       hasPaths = arcs && internal.layerHasPaths(lyr),
       _records = lyr.data ? lyr.data.getRecords() : null,
@@ -88,7 +89,7 @@ internal.initFeatureProxy = function(lyr, arcs) {
           return geom.getPlanarShapeArea(_ids, arcs);
         },
         innerPct: function() {
-          if (!calcInnerPct) calcInnerPct = internal.getInnerPctCalcFunction(arcs, lyr.shapes);
+          if (!calcInnerPct) calcInnerPct = getInnerPctCalcFunction(arcs, lyr.shapes);
           return calcInnerPct(_ids);
         },
         originalArea: function() {
@@ -179,4 +180,4 @@ internal.initFeatureProxy = function(lyr, arcs) {
     }
     return ctx;
   };
-};
+}

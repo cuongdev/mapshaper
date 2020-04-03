@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-common
 mapshaper-option-parser
 mapshaper-option-validation
 mapshaper-option-parsing-utils

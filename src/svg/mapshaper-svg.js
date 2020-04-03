@@ -1,5 +1,4 @@
 /* @requires
-mapshaper-common
 mapshaper-basic-symbols
 geojson-export
 geojson-to-svg

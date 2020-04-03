@@ -1,4 +1,4 @@
-/* @require mapshaper-common mapshaper-dataset-utils svg-common */
+/* @require svg-common */
 
 
 // @lyr a layer in a dataset

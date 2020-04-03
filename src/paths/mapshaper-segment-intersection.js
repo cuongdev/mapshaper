@@ -1,5 +1,5 @@
-/* @requires mapshaper-arcs, mapshaper-segment-geom, mapshaper-segment-sorting */
 
+import { sortSegmentIds } from 'paths/mapshaper-segment-sorting';
 // Convert an array of intersections into an ArcCollection (for display)
 //
 internal.getIntersectionPoints = function(intersections) {
@@ -180,7 +180,7 @@ internal.intersectSegments = function(ids, xx, yy, optsArg) {
 
   // Sort segments by xmin, to allow efficient exclusion of segments with
   // non-overlapping x extents.
-  internal.sortSegmentIds(xx, ids); // sort by ascending xmin
+  sortSegmentIds(xx, ids); // sort by ascending xmin
 
   i = 0;
   while (i < lim) {

@@ -1,4 +1,3 @@
-/* @requires mapshaper-polygon-geom */
 
 // Used by -clean -dissolve2 -filter-slivers -filter-islands to generate area filters
 // for removing small polygon rings.

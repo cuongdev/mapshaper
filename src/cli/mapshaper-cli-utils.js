@@ -1,11 +1,13 @@
-/* @requires
-mapshaper-common
-mapshaper-file-types
-*/
 
 import { preserveContext } from 'mapshaper-internal';
+import { trimBOM, decodeString } from 'text/mapshaper-encodings';
+import utils from 'utils/mapshaper-utils';
+import internal from 'mapshaper-internal';
+import { stop, error } from 'utils/mapshaper-logging';
 
 var cli = {};
+
+export default cli;
 
 cli.isFile = function(path, cache) {
   var ss = cli.statSync(path);
@@ -35,7 +37,7 @@ cli.readFile = function(fname, encoding, cache) {
     content = require('fs').readFileSync(fname);
   }
   if (encoding && Buffer.isBuffer(content)) {
-    content = internal.trimBOM(internal.decodeString(content, encoding));
+    content = trimBOM(decodeString(content, encoding));
   }
   return content;
 };

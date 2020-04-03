@@ -1,4 +1,3 @@
-/* @requires mapshaper-arcs */
 
 internal.simplifyArcsFast = function(arcs, dist) {
   var xx = [],

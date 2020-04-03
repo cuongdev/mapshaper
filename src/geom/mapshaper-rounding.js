@@ -1,4 +1,3 @@
-/* @require mapshaper-dataset-utils, mapshaper-point-utils */
 
 internal.getBoundsPrecisionForDisplay = function(bbox) {
   var w = bbox[2] - bbox[0],

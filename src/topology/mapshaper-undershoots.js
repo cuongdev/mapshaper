@@ -1,10 +1,10 @@
 
 /* @requires
 mapshaper-nodes
-mapshaper-shape-geom
-mapshaper-segment-geom
 mapshaper-units
 */
+
+import { findClosestPointOnSeg } from 'geom/mapshaper-segment-geom';
 
 internal.closeUndershoots = function(lyr, dataset, opts) {
   var maxGapLen = opts.gap_tolerance ? internal.convertIntervalParam(opts.gap_tolerance, internal.getDatasetCRS(dataset)) : 0;
@@ -97,7 +97,7 @@ internal.getArcExtension = function(hit, arcId, arcs) {
       p1 = [v1.x, v1.y],
       s1 = hit.segment[0],
       s2 = hit.segment[1],
-      endPtNew = geom.findClosestPointOnSeg(endPtOld[0], endPtOld[1], s1[0], s1[1], s2[0], s2[1]);
+      endPtNew = findClosestPointOnSeg(endPtOld[0], endPtOld[1], s1[0], s1[1], s2[0], s2[1]);
   if (!internal.pointIsEndpoint(endPtNew, s1, s2)) {
     // add small overshoot if new endpoint is not a vertex, to make sure intersection
     // is correctly detected later

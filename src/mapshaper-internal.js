@@ -1,10 +1,11 @@
 import utils from 'utils/mbloch-utils';
-
 var internal = {
   LOGGING: false,
   STDOUT: false,
   context: createContext()
 };
+
+export default internal;
 
 internal.getStateVar = function(key) {
   return internal.context[key];
@@ -14,7 +15,12 @@ internal.setStateVar = function(key, val) {
   internal.context[key] = val;
 };
 
-export default internal;
+// Attach named exports to the internal object
+// (e.g. for compatibility with test)
+internal.register = function(moduleExports, namespace) {
+
+  Object.assign(internal, moduleExports);
+};
 
 // Install a new set of context variables, clear them when an async callback is called.
 // @cb callback function to wrap

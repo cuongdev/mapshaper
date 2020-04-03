@@ -1,4 +1,4 @@
-/* @requires mapshaper-dataset-utils svg-properties */
+/* @requires svg-properties */
 
 api.svgStyle = function(lyr, dataset, opts) {
   var filter;

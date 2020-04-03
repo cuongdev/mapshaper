@@ -1,4 +1,3 @@
-/* @requires mapshaper-file-reader */
 
 internal.GeoJSONReader = GeoJSONReader;
 

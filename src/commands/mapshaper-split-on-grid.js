@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 // Split the shapes in a layer according to a grid
 // Return array of layers. Use -o bbox-index option to create index

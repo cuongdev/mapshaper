@@ -1,4 +1,4 @@
-/* @requires mapshaper-expressions, mapshaper-calc-utils */
+/* @requires  mapshaper-calc-utils */
 
 // Returns a function for filtering multiple source-table records
 // (used by -join command)

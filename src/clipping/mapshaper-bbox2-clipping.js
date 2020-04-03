@@ -20,7 +20,7 @@ internal.divideDatasetByBBox = function(dataset, bbox) {
   var clipDataset = internal.bboxPointsToClipDataset(data.bboxPoints);
   var mergedDataset = internal.mergeDatasets([dataset, clipDataset]);
   // TODO: detect if we need to rebuild topology (unlikely), like with the full clip command
-  // api.buildTopology(mergedDataset);
+  // internal.buildTopology(mergedDataset);
   var clipLyr = mergedDataset.layers.pop();
   dataset.arcs = mergedDataset.arcs;
   dataset.layers = mergedDataset.layers;

@@ -1,4 +1,3 @@
-/* @requires mapshaper-common */
 
 api.renameLayers = function(layers, names) {
   var nameCount = names && names.length || 0;

@@ -1,8 +1,5 @@
 /* @requires
-mapshaper-dataset-utils
 mapshaper-nodes
-mapshaper-shape-geom
-mapshaper-path-index
 mapshaper-intersection-cuts
 mapshaper-polygon-repair
 mapshaper-pathfinder-utils

@@ -1,6 +1,5 @@
 /* @requires
 mapshaper-polygon-dissolver
-mapshaper-shape-utils
 mapshaper-intersection-cuts
 */
 
